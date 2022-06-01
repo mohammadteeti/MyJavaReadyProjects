@@ -1,6 +1,6 @@
 package Calculator;
 
-import javax.lang.model.util.ElementScanner14;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -35,7 +35,6 @@ public class ButtonPanel extends JPanel{
     private JButton btnPoint =   new JButton(".");
 
     private String input ;
-    private String inputToSend="";
     public ButtonPanel (Component parent,JTextField textField){
 
         this.setLayout(new GridLayout(4,5));
@@ -77,7 +76,7 @@ public class ButtonPanel extends JPanel{
                         {
                         case "1": case "2": case "3": case "4":case "5":
                         case "6": case "7": case "8": case "9": case "0":
-                        if(CalcGui.OprQueue.isEmpty())
+                        if(CalcGui.Op1Queue.isEmpty())
                             CalcGui.Op1+=input;
                         else 
                             CalcGui.Op2+=input;
@@ -91,17 +90,24 @@ public class ButtonPanel extends JPanel{
                         break;
 
                         case "+": case "-": case "x": case "\\": 
+                          
                         if (CalcGui.Op1Queue.isEmpty())
                             CalcGui.Op1Queue.add(CalcGui.Op1);
                         else if(!CalcGui.Op2.isEmpty())
                             CalcGui.Op2Queue.add(CalcGui.Op2);
                         
-                        CalcGui.OprQueue.add(input);
+                            CalcGui.OprQueue.add(input);
                         if (!CalcGui.Op2Queue.isEmpty()){
                             CalcGui.calculationForQueue((MainPanle) parent);
                             CalcGui.Op1="";
                             CalcGui.Op2="";
 
+                        }else if (CalcGui.Op2Queue.isEmpty() && CalcGui.OprQueue.size()>1){
+                            CalcGui.OprQueue.remove();
+                            CalcGui.OprQueue.remove();
+                            CalcGui.OprQueue.add(input);
+                            textField.setText(CalcGui.Op1Queue.peek()+input);
+                            break;
                         }
                         
                         // if (CalcGui.Opr.equals(""))
