@@ -1,11 +1,25 @@
 package BmpGenerator;
 
+/**
+ * A program that Generates a Random BMP Images  with the 
+ * specified Image Width , Height and Bit Depth 
+ * {@author Mohammad J Teeti}
+ * {@version 1.0}
+ * 
+ */
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Random;
 import java.awt.Dimension;
 
+/**
+ *  Main Class {@code BmpGeneratorClass} the only class in 
+ *  the programm , it has two methods {@code main} and {@code randomBmp}
+ *  
+ * @author Mohammad J Teeti
+ * 
+ */
 public class BmpGeneratorClass {
     private static volatile boolean exit = false;
     private static int fileNumber= 0;
@@ -61,6 +75,13 @@ public class BmpGeneratorClass {
 
     }
 
+    /**
+     * Random Bmp Generator Method , it uses {@code Random } Class to 
+     * generate random integers to fill the bmp image.
+     * 
+     * @param d Dimensopn Object contains Image Width and Height
+     * @param bitDepth bit depth of image [1,4,8,16,24,32]
+     */
     private void randomBmp(Dimension d ,int bitDepth) {
 
 
