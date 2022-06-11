@@ -68,7 +68,7 @@ public class Snake extends JComponent implements KeyListener {
         
         });
     
-        moveSnake.setDaemon(true); // background motion all the day
+       
         
        
 
