@@ -1,31 +1,32 @@
 package ScreenRecord;
 
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
+import javax.imageio.stream.ImageInputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Image;
+import java.awt.Robot;
+import java.awt.AWTException;
 import java.awt.Rectangle;
-import java.awt.Shape;
 import java.awt.Toolkit;
-import java.awt.image.ImageObserver;
+import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.AttributedCharacterIterator;
-import java.awt.Graphics;
-import java.awt.Dimension;
 public class Main extends JFrame {
     
     public Main() {
     }
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-       Mp4Format m = new Mp4Format(new Dimension(500,500));
+    public static void main(String[] args) throws AWTException, IOException  {
+       //Mp4Format m = new Mp4Format(new Dimension(500,500));
+
+       Robot  r  =  new Robot();
+       Rectangle rec =  new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+
+       BufferedImage img  = r.createScreenCapture(rec);
+       boolean found = ImageIO.write(img,"jpg",new File(System.console().readLine()+".jpg"));
+        System.out.println(found);
+       
+    
 
 
     }

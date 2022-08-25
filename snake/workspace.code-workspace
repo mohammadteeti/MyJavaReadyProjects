@@ -1,0 +1,26 @@
+{
+	"folders": [],
+	"settings": {
+		"java.project.encoding": "setDefault",
+		"java.project.referencedLibraries": {
+			"include": [
+				"lib/**/*.jar"
+			],
+			"exclude": [
+				"c:\\javafx-sdk-18.0.1\\lib\\javafx.controls.jar",
+				"c:\\javafx-sdk-18.0.1\\lib\\javafx.fxml.jar",
+				"c:\\javafx-sdk-18.0.1\\lib\\javafx.web.jar"
+			]
+		},
+	    "java.configuration.runtimes":[
+
+			{"name": "JavaSE-18",
+			"path": "c:\\Program Files\\Java\\jdk-18.0.1.1",
+			"default": true}
+		],
+		"java.project.sourcePaths": [
+			"C:\\Users\\moham\\Desktop\\MyJavaProjects\\snake"
+		],
+		"java.project.outputPath": "C:\\Users\\moham\\Desktop\\MyJavaProjects\\snake\\snake"
+	}
+}

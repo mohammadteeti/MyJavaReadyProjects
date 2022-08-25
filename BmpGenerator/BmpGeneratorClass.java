@@ -78,6 +78,7 @@ public class BmpGeneratorClass {
     /**
      * Random Bmp Generator Method , it uses {@code Random } Class to 
      * generate random integers to fill the bmp image.
+     * The bit depth should belong to  {1,4,8,16,24,32}
      * @param d Dimensopn Object contains Image Width and Height
      * @param bitDepth bit depth of image [1,4,8,16,24,32]
      * 
